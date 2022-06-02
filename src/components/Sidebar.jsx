@@ -48,23 +48,24 @@ const Sidebar = ({children}) => {
     ]
     return (
         <div className="container">
-           <div style={{width: isOpen ? "200px" : "50px"}} className="sidebar">
+           <div style={{width: isOpen ? "50px" : "200px"}} className="sidebar">
                <div className="top_section">
-                   <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1>
-                   <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
-                       <FaBars onClick={toggle}/>
+                   <h1 style={{display: isOpen ? "none" : "block"}} className="logo">Logo</h1>
+                   <div style={{marginLeft: isOpen ? "-5px" : "50px"}} className="bars">
+                       {/* <FaBars onClick={toggle}/> */}
+                       <h2 style={{display: isOpen ? "block" : "none"}}>M</h2>
                    </div>
                </div>
                {
                    menuItem.map((item, index)=>(
-                       <NavLink to={item.path} key={index} className="link" activeclassName="active">
+                       <NavLink to={item.path} key={index} className="link" activeClassName="active">
                            <div className="icon">{item.icon}</div>
-                           <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div>
+                           <div style={{display: isOpen ? "none" : "block"}} className="link_text">{item.name}</div>
                        </NavLink>
                    ))
                }
            </div>
-           <main>{children}</main>
+           <main><FaBars onClick={toggle}/>{children}</main>
         </div>
     );
 };
