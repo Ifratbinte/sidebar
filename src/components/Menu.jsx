@@ -24,7 +24,19 @@ const Menu = [
     {
         path:"/product",
         name:"Product",
-        icon:<FaShoppingBag/>
+        icon:<FaShoppingBag/>,
+        submenu: [
+            {
+                path:"/productList/dress",
+                name:"Dress",
+                icon:<FaThList/>
+            },
+            {
+                path:"/productList/shoe",
+                name:"Shoe",
+                icon:<FaThList/>
+            },
+        ]
     },
     {
         path:"/productList",

@@ -49,3 +49,19 @@ main{
 .icon, .link_text{
     font-size: 20px;
 }
+.submenu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    padding: 10px 15px;
+    gap: 15px;
+    transition: all 0.5s;
+}
+.submenu-item{
+    display: flex;
+    gap: 15px;
+}
+.submenu-container .link{
+    padding-left: 3rem;
+}

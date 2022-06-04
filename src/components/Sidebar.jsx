@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {FaBars} from "react-icons/fa";
 import Menu from './Menu'
+import SubMenu from './SubMenu';
 import { NavLink } from 'react-router-dom';
 
 
@@ -10,7 +11,7 @@ const Sidebar = ({children}) => {
     
     return (
         <div className="container">
-           <div style={{width: isOpen ? "50px" : "200px"}} className="sidebar">
+           <div style={{width: isOpen ? "50px" : "280px"}} className="sidebar">
                <div className="top_section">
                    <h1 style={{display: isOpen ? "none" : "block"}} className="logo">Logo</h1>
                    <div style={{marginLeft: isOpen ? "-5px" : "50px"}} className="bars">
@@ -19,6 +20,11 @@ const Sidebar = ({children}) => {
                </div>
                {
                    Menu.map((item, index)=> {
+                       if (item.submenu) {
+                           return <div className="submenu-container">
+                               <SubMenu isOpen={isOpen} item={item} key={item.name}/>
+                           </div>
+                       }
                        return (
                         <NavLink to={item.path} key={index} className="link" activeClassName="active">
                             <div className="icon">{item.icon}</div>
