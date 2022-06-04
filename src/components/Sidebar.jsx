@@ -20,17 +20,17 @@ const Sidebar = ({children}) => {
                </div>
                {
                    Menu.map((item, index)=> {
-                       if (item.submenu) {
-                           return <div className="submenu-container">
-                               <SubMenu isOpen={isOpen} item={item} key={item.name}/>
-                           </div>
-                       }
-                       return (
-                        <NavLink to={item.path} key={index} className="link" activeClassName="active">
-                            <div className="icon">{item.icon}</div>
-                            <div style={{display: isOpen ? "none" : "block"}} className="link_text">{item.name}</div>
-                        </NavLink>
-                       )
+                        if (item.submenu) {
+                            return <div className="submenu-container">
+                                <SubMenu isOpen={isOpen} item={item} key={item.name}/>
+                            </div>
+                        }
+                        return (
+                            <NavLink to={item.path} key={index} className="link" activeClassName="active">
+                                <div className="icon">{item.icon}</div>
+                                <div style={{display: isOpen ? "none" : "block"}} className="link_text">{item.name}</div>
+                            </NavLink>
+                        )
                    })
                }
            </div>
